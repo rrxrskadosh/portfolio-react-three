@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from 'styled-components'
 
-const About = () => {
+export const About = () => {
   return (
     <Section>
       <Container>
@@ -25,7 +25,6 @@ const About = () => {
   );
 };
 
-export default About;
 
 const Section = styled.div`
     height: 100vh;
