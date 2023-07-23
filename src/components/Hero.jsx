@@ -1,9 +1,14 @@
 import React from 'react'
 import { styled } from 'styled-components'
 
+// Components
+import { Navbar } from './Navbar'
+
 export const Hero = () => {
   return (
-    <Section>Hero</Section>
+    <Section>
+        <Navbar />
+    </Section>
   )
 }
 
