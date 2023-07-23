@@ -8,7 +8,7 @@ export const Works = () => {
 }
 
 const Section = styled.div`
-  color: #fff;
-  height: 100vh;
-  scroll-snap-align: center;
+    color: #fff;
+    height: 100vh;
+    scroll-snap-align: center;
 `

@@ -24,18 +24,22 @@ export const Navbar = () => {
 }
 
 const Section = styled.div`
-  display: flex;
-  justify-content: center; 
-  color: #fff;
-  font-family: 'Lunasima', sans-serif;
+    display: flex;
+    justify-content: center; 
+    color: #fff;
+    font-family: 'Lunasima', sans-serif;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
 `
 
 const Container = styled.div`
-  width: 1400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 `
 
 const Links = styled.div`
@@ -45,7 +49,7 @@ const Links = styled.div`
     gap: 50px;
 `
 const Logo = styled.img`
-    width: 8%;
+    width: 9%;
 `
 const List = styled.ul`
     display: flex;
@@ -82,3 +86,6 @@ const Button = styled.button`
     border-radius: 10px;
     cursor: pointer;
 `
+
+// Media Queries
+
