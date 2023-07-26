@@ -51,6 +51,7 @@ const Left = styled.div`
 `;
 
 const Title = styled.h1`
+    font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     color: #fff;
     @media only screen and (max-width: 768px) {

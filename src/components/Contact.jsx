@@ -1,6 +1,8 @@
 import React from 'react'
 import { styled } from 'styled-components'
 
+import MapChart from './Map'
+
 export const Contact = () => {
   return (
     <Section>
@@ -15,7 +17,9 @@ export const Contact = () => {
             <Button>Send</Button>
           </Form>
         </Left>
-        <Rigth></Rigth>
+        <Rigth>
+          <MapChart />
+        </Rigth>
       </Container>
     </Section>
   )
@@ -36,7 +40,7 @@ const Container = styled.div`
 
 const Left = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     flex: 1;
 `
@@ -81,6 +85,11 @@ const Button = styled.button`
 `
 
 const Rigth = styled.div`
-  flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-family: 'Lunasima', sans-serif;
+    font-size: 1.3rem; 
+    flex: 1;
 
 `
