@@ -23,7 +23,9 @@ export const Works = () => {
                 ))}
             </List>
         </Left>
-        <Right>{/*3d Model*/}</Right>
+        <Right>
+            <Img src="./img/rocket-works.png"></Img>
+        </Right>
       </Container>
     </Section>
   )
@@ -89,7 +91,7 @@ const ListItem = styled.li`
     position: absolute;
     top: 0;
     left: 0;
-    color: #00cbf9;
+    color: #fff;
     width: 0px;
     overflow: hidden;
     white-space: nowrap;
@@ -111,5 +113,29 @@ const ListItem = styled.li`
 `;
 
 const Right = styled.div`
-  flex: 1;
-`;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+`
+
+const Img = styled.img`
+  
+    width: 90%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    rigth: 0;
+    margin: auto;
+
+    animation: animate 2s infinite ease alternate;
+    
+    @keyframes animate {
+        100% {
+            transform: translateY(40px)
+        }
+    }
+
+`

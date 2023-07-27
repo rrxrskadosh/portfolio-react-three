@@ -1,12 +1,21 @@
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei';
+
 import React from 'react'
 import { styled } from 'styled-components'
+import Cube from './Cube';
 
 export const About = () => {
   return (
     <Section>
       <Container>
         <Left>
-          {/*3D model*/}
+          <Canvas camera={{fov:25, position:[5, 5, 5]}}>
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={4} />
+            <directionalLight position={[3, 2, 1]} />
+            <Cube />
+          </Canvas>
         </Left>
         <Right>
           <Title>Think outside the square space</Title>

@@ -2,7 +2,9 @@ import React from 'react'
 import { styled } from 'styled-components'
 
 // Components
+import { Canvas } from '@react-three/fiber'
 import { Navbar } from './Navbar'
+import { MeshDistortMaterial, OrbitControls } from '@react-three/drei'
 
 export const Hero = () => {
   return (
@@ -21,6 +23,22 @@ export const Hero = () => {
                 <Button>Learn More!</Button>
             </Left>
             <Right>
+                <Canvas>
+                    <OrbitControls enableZoom={false} />
+                    <ambientLight intensity={5}/>
+                    <directionalLight position={[3, 2, 1]} />
+                    <mesh>
+                        <sphereGeometry args={[2.3, 100, 200]}/>
+                        <meshPhysicalMaterial />
+                        <MeshDistortMaterial 
+                            color={"#1E90FF"}
+                            attach={"material"}
+                            distort={0.5}
+                            speed={3} />
+                    </mesh>
+                    
+                </Canvas>
+                
                 <Img src="./img/rocket-1.png"></Img>
             </Right>
         </Container>
