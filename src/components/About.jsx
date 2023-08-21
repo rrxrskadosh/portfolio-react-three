@@ -41,6 +41,10 @@ const Section = styled.div`
     display: flex;
     justify-content: center;
     font-family: 'Lunasima', sans-serif;
+
+    @media only screen and (max-width: 768px) {
+      heigth: 200vh;
+    }
 `;
 
 const Container = styled.div`
@@ -49,6 +53,10 @@ const Container = styled.div`
     width: 1400px;
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+    }
 `;
 
 const Left = styled.div`
@@ -64,7 +72,7 @@ const Title = styled.h1`
     font-size: 2rem;
     color: #fff;
     @media only screen and (max-width: 768px) {
-        font-size: 60px;
+        font-size: 35px;
     }
 `;
 
@@ -85,6 +93,10 @@ const WhatWeDo = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @media only screen and (max-width: 768px) {
+        padding: 10px;
+    }
 `;
 
 const Line = styled.img`
@@ -98,6 +110,10 @@ const Subtitle = styled.h2`
 const Desc = styled.p`
     font-size: 1rem;
     color: lightgray;
+
+    @media only screen and (max-width: 768px) {
+        padding: 10px;
+    }
 `;
 
 const Button = styled.button`

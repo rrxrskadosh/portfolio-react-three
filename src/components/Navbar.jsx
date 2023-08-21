@@ -1,26 +1,34 @@
-import React from 'react'
-import { styled } from 'styled-components'
+import { Link } from 'react-router-dom';
+import { styled } from 'styled-components';
 
 export const Navbar = () => {
-  return (
-    <Section>
-        <Container>
-            <Links>
-                <Logo src="./img/goalpath.png"></Logo>
-                <List>
-                    <ListItem>Home</ListItem>
-                    <ListItem>About</ListItem>
-                    <ListItem>Works</ListItem>
-                    <ListItem>Contact</ListItem>
-                </List>
-            </Links>
-            <Icons>
-                <Icon src="./img/search.png"></Icon>
-                <Button>Hire</Button>
-            </Icons>
-        </Container>
-    </Section>
-  )
+    return (
+        <Section>
+            <Container>
+                <Links>
+                    <Logo src="./img/goalpath.png"></Logo>
+                    <List>
+                        <ListItem>
+                            <Link to="/">Home</Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link to="/about">About</Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link to="/works">Works</Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link to="/contact">Contact</Link>
+                        </ListItem>
+                    </List>
+                </Links>
+                <Icons>
+                    <Icon src="./img/search.png"></Icon>
+                    <Button>Hire</Button>
+                </Icons>
+            </Container>
+        </Section>
+    )
 }
 
 const Section = styled.div`
@@ -40,6 +48,11 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        padding: 15px;
+    }
 `
 
 const Links = styled.div`
@@ -49,12 +62,26 @@ const Links = styled.div`
     gap: 50px;
 `
 const Logo = styled.img`
-    width: 9%;
+    width: 10%;
+
+    @media only screen and (max-width: 1080px) {
+        width: 17%;
+    }
+    @media only screen and (max-width: 768px) {
+        width: 25%;
+    }
+    @media only screen and (max-width: 455px) {
+        width: 55%;
+    }
 `
 const List = styled.ul`
     display: flex;
     gap: 20px;
     list-style: none;
+
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
 `
 
 const ListItem = styled.li`
@@ -71,7 +98,7 @@ const Icons = styled.div`
     gap: 20px;
 `
 
-const Icon = styled.img`
+    const Icon = styled.img`
     width: 15%;
     cursor: pointer;
 `
@@ -85,7 +112,11 @@ const Button = styled.button`
     border: none;
     border-radius: 10px;
     cursor: pointer;
-`
 
-// Media Queries
+    @media only screen and (max-width: 768px) {
+        width: 100px;
+        padding: .8rem;
+        font-size: 1rem; 
+    }
+`
 

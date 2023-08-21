@@ -3,13 +3,12 @@ import { styled } from 'styled-components'
 
 // Components
 import { Canvas } from '@react-three/fiber'
-import { Navbar } from './Navbar'
 import { MeshDistortMaterial, OrbitControls } from '@react-three/drei'
+
 
 export const Hero = () => {
   return (
     <Section>
-        <Navbar />
         <Container>
             <Left>
                 <Title>Erasing the limits to the goal of Knowledge</Title>
@@ -28,7 +27,7 @@ export const Hero = () => {
                     <ambientLight intensity={5}/>
                     <directionalLight position={[3, 2, 1]} />
                     <mesh>
-                        <sphereGeometry args={[2.3, 100, 200]}/>
+                        <sphereGeometry args={[2.3, 180, 200]}/>
                         <meshPhysicalMaterial />
                         <MeshDistortMaterial 
                             color={"#1E90FF"}
@@ -36,9 +35,7 @@ export const Hero = () => {
                             distort={0.5}
                             speed={3} />
                     </mesh>
-                    
                 </Canvas>
-                
                 <Img src="./img/rocket-1.png"></Img>
             </Right>
         </Container>
@@ -51,18 +48,26 @@ const Section = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;  
+    height: 60vh;  
     scroll-snap-align: center;
     color: #fff;
     font-family: 'Lunasima', sans-serif;
+
+    @media only screen and (max-width: 768px) {
+        height: 220vh;
+    }
 `
 
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
     width: 85%;
-    height: 100vh;  
+    height: 100%;  
     scroll-snap-align: center;
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 const Left = styled.div`
@@ -70,16 +75,22 @@ const Left = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
+
+    @media only screen and (max-width: 768px) {
+        flex:1;
+        align-items: center;
+    }
 `
 
 const Title = styled.h2`
     font-size: 2rem;
     background: linear-gradient(
         to right,
-        #fff 20%,
-        #DE643D 30%,
-        #0190cd 70%,
-        #764ada 80%
+        #FFF 20%,
+        #F18309 70%,
+        #0190cd 30%,
+        #0b4ca3 0%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -96,6 +107,10 @@ const Title = styled.h2`
             background-position: 100% 50%;
         }
     }
+
+    @media only screen and (max-width: 768px) {
+        font-size: 1.2rem;
+    }
 `
 const WhatWeDo = styled.div`
     display: flex;
@@ -109,12 +124,21 @@ const Line = styled.img`
 const TagLine = styled.h3`
     font-size: 1.5rem;
     font-weight: 500;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 1.2rem;
+    }
 `
 const Desc = styled.p`
     width: 60%;
     font-size: 0.9rem;
     line-height: 1.5;
     padding: 1rem;
+
+    @media only screen and (max-width: 768px) {
+        width: 87%;
+        font-size: .8rem;
+    }
 `
 
 const Button = styled.button`
@@ -127,11 +151,20 @@ const Button = styled.button`
     border: none;
     border-radius: 10px;
     cursor: pointer;
+
+    @media only screen and (max-width: 768px) {
+        width: 130px;
+        padding: .9rem;
+        font-size: .7rem; 
+    }
 `
 
 const Right = styled.div`
     flex: 2;
     position: relative;
+    @media only screen and (max-width: 768px) {
+        
+    }
 `
 const Img = styled.img`
     width: 100%;
@@ -147,7 +180,7 @@ const Img = styled.img`
     
     @keyframes animate {
         100% {
-            transform: translateY(20px)
+            transform: translateY(-40px)
         }
     }
 `
